@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Date" representedClassName="Date" syncable="YES" codeGenerationType="class">
-        <attribute name="hoursToday" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DateData" representedClassName="DateData" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="parentProject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="data" inverseEntity="Project" syncable="YES"/>
+        <attribute name="seconds" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="parentProject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="day" inverseEntity="Project" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName="Project" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="totalHours" optional="YES" syncable="YES"/>
-        <relationship name="data" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Date" inverseName="parentProject" inverseEntity="Date" syncable="YES"/>
+        <attribute name="totalTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="day" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DateData" inverseName="parentProject" inverseEntity="DateData" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Date" positionX="-3474" positionY="-1684" width="128" height="88"/>
-        <element name="Project" positionX="-3656" positionY="-1738" width="128" height="88"/>
+        <element name="DateData" positionX="-3539" positionY="-1672" width="128" height="88"/>
+        <element name="Project" positionX="-3737" positionY="-1701" width="128" height="88"/>
     </elements>
 </model>
